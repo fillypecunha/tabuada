@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada </title>
+</head>
+<style>
+    body{
+        background-color: blue;
+
+    }
+    section{
+        text-align: center;
+        width: 600px; 
+        height: 300px;
+        margin: auto;         
+        background-color: azure;
+        border-style: solid;
+        padding: 40px;
+            
+    }
+header{
+    text-align: center;
+    font-size:40px;
+    color: azure;
+    padding: 40px;
+
+}
+</style>
+<body>
+    <header>
+        Tabuada
+
+    </header>
+
+<section>
+   <p> numero <input type="number" name="ini" id="num"> 
+<input type="button" value=" contar " onclick="contar()"> </p>
+
+    <select name="resposta" id="tabuada" size="10">
+        <option value=""></option>
+        <option value=""></option>
+    </select>
+
+</section>
+<script>
+
+function contar(){
+    let algoritmo= document.getElementById("num")
+    let res= document.getElementById("tabuada")
+
+   
+    if (algoritmo.value.length == 0) {
+        
+     window.alert(`erro numero digitado`)
+    }else{
+       let algo=Number(algoritmo.value)
+       let c= 1
+        res.innerHTML=``
+    
+       for( c=1; c<=10; c++ ){
+         let item = document.createElement("option")
+        item.text=  `${algo} X ${c}= ${algo* c}`
+        res.appendChild(item)
+
+       }
+
+      
+       
+
+    }
+    
+
+}
+
+
+
+</script>
+
+</body>
+</html>
